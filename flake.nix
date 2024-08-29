@@ -8,9 +8,9 @@
 
   outputs = { self, nixpkgs, disko }: {
     nixosConfigurations = {
-      qemu-vm = nixpkgs.lib.nixosSystem {
+      nixos-vm = nixpkgs.lib.nixosSystem {
         modules = [
-          ./hosts/qemu-vm
+          ./hosts/nixos-vm
         ];
       };
     };
