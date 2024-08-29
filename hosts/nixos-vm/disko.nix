@@ -7,6 +7,7 @@
 	  type = "gpt";
 	  partitions = {
 	    boot = {
+	      label = "vm-boot";
 	      start = "1M";
 	      size = "512M";
 	      type = "EF00";
@@ -17,6 +18,7 @@
 	      };
             };
 	    swap = {
+	      label = "vm-swap";
 	      size = "16G";
 	      content = {
 		type = "swap";
@@ -24,6 +26,7 @@
               };
 	    };
 	    root = {
+	      label = "vm-root";
 	      size = "100%";
 	      content = {
 		type = "filesystem";
