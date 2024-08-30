@@ -8,7 +8,11 @@
 	  partitions = {
 	    boot = {
 	      label = "vm-boot";
-	      start = "1M";
+	      size = "1M";
+	      type = "EF02";
+	    };
+	    ESP = {
+	      label = "vm-esp";
 	      size = "512M";
 	      type = "EF00";
 	      content = {
