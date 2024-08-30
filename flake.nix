@@ -16,5 +16,8 @@
         ];
       };
     };
+
+    packages.x86_64-linux.disko = disko.packages.x86_64-linux.disko;
+    packages.x86_64-linux.disko-install = disko.packages.x86_64-linux.disko-install;
   };
 }
