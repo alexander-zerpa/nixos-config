@@ -18,10 +18,19 @@
     variant = "";
   };
 
+  sops = {
+    defaultSopsFile = ../../../secrets.yaml;
+
+    secrets = {
+      alex-password.neededForUsers = true;
+    };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
     isNormalUser = true;
     description = "Alexander";
+    hashedPasswordFile = config.sops.secrets.alex-password.path;
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
