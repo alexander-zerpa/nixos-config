@@ -19,12 +19,20 @@
   };
 
   sops = {
-    defaultSopsFile = ../../../secrets.yaml;
+    defaultSopsFile = ../../secrets.yaml;
+
+    age = {
+      sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+      keyFile = "/var/lib/sops-nix/key.txt";
+      generateKey = true;
+    };
 
     secrets = {
       alex-password.neededForUsers = true;
     };
   };
+  
+  users.mutableUsers = false;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.alex = {
