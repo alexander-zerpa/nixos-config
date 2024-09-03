@@ -3,43 +3,44 @@
     disk = {
       main = {
         type = "disk";
-	content = {
-	  type = "gpt";
-	  partitions = {
-	    boot = {
-	      label = "vm-boot";
-	      size = "1M";
-	      type = "EF02";
-	    };
-	    ESP = {
-	      label = "vm-esp";
-	      size = "512M";
-	      type = "EF00";
-	      content = {
-	        type = "filesystem";
-		format = "vfat";
-		mountpoint = "/boot";
-	      };
+        device = "/dev/vda";
+        content = {
+          type = "gpt";
+          partitions = {
+            boot = {
+              label = "vm-boot";
+              size = "1M";
+              type = "EF02";
             };
-	    swap = {
-	      label = "vm-swap";
-	      size = "16G";
-	      content = {
-		type = "swap";
-		resumeDevice = true;
+            ESP = {
+              label = "vm-esp";
+              size = "512M";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
               };
-	    };
-	    root = {
-	      label = "vm-root";
-	      size = "100%";
-	      content = {
-		type = "filesystem";
-		format = "ext4";
-		mountpoint = "/";
-	      };
-	    };
-	  };
-	};
+            };
+            swap = {
+              label = "vm-swap";
+              size = "16G";
+              content = {
+                type = "swap";
+                resumeDevice = true;
+              };
+            };
+            root = {
+              label = "vm-root";
+              size = "100%";
+              content = {
+                type = "filesystem";
+                format = "ext4";
+                mountpoint = "/";
+              };
+            };
+          };
+        };
       };
     };
   };

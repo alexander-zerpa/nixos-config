@@ -11,8 +11,8 @@
       nixos-vm = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/nixos-vm
-	  disko.nixosModules.disko
-	  ./hosts/nixos-vm/disko.nix
+          disko.nixosModules.disko
+          ./hosts/nixos-vm/disko.nix
         ];
       };
     };
