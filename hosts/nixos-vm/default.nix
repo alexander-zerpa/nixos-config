@@ -26,7 +26,9 @@
     };
   };
 
-  environment.etc."ssh/ssh_host_ed25519_key".source = config.sops.secrets.ssh-host.path;
+  system.activationScripts = {
+    ssh-host.text = "cp ${config.sops.secrets.ssh-host.path} /etc/ssh/ssh_host_ed25519_key";
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
