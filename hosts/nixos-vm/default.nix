@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -9,6 +5,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./../common
+      ./../../users/alex
     ];
 
   # Bootloader.
@@ -20,11 +17,32 @@
   networking.hostName = "nixos-vm"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
-  sops.secrets = {
-    ssh-host = {
-      sopsFile = ./secrets.yaml;
+  sops = {
+    defaultSopsFile = ./../../secrets.yaml;
+
+    age = {
+      sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+      keyFile = "/var/lib/sops-nix/key.txt";
+      generateKey = true;
+    };
+
+    secrets = {
+      ssh-host = {
+        sopsFile = ./secrets.yaml;
+      };
+
+      alex-password = {
+        neededForUsers = true;
+      };
+      alex-ssh = {
+        path = "/home/alex/.ssh/id_ed25519";
+	mode = "0600";
+	owner = config.users.users.alex.name;
+      };
     };
   };
+
+  users.users.alex.hashedPasswordFile = config.sops.secrets.alex-password.path;
 
   system.activationScripts = {
     ssh-host.text = "cp ${config.sops.secrets.ssh-host.path} /etc/ssh/ssh_host_ed25519_key";
