@@ -23,9 +23,10 @@
   sops.secrets = {
     ssh-host = {
       sopsFile = ./secrets.yaml;
-      path = "/etc/ssh/ssh_host_ed25519_key";
     };
   };
+
+  environment.etc."ssh/ssh_host_ed25519_key".source = config.sops.secrets.ssh-host.path;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
