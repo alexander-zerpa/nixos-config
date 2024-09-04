@@ -21,7 +21,10 @@
   sops = {
     defaultSopsFile = ../../secrets.yaml;
 
-    age.keyFile = "/var/lib/sops-nix/key.txt";
+    age = {
+      keyFile = "/var/lib/sops-nix/key.txt";
+      generateKey = true;
+    };
 
     secrets = {
       alex-password.neededForUsers = true;

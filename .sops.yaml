@@ -1,11 +1,15 @@
 keys:
-  - &users:
-    - &alex age1ftswmpx50ze6hhkf9rc2yadmq4ztakkn9xk57tweuvyfvklhyydqluekgw
+  - &admin age1ftswmpx50ze6hhkf9rc2yadmq4ztakkn9xk57tweuvyfvklhyydqluekgw
   - &hosts:
     - &nixos-vm age10vhjst9flezaa68mga2kj7duz67ljyn7dujlddjcdep23h8jrf9qphvnmw
 creation_rules:
-  - path_regex: secrets(/[^/]+)?\.(yaml|json|env|ini)$
+  - path_regex: secrets\.(yaml|json|env|ini)$
     key_groups:
-    - age:
-      - *alex
-      - *nixos-vm
+      - age:
+        - *admin
+        - *nixos-vm
+  - path_reguex: host/nixos-vm/secrets\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+        - *admin
+        - *nixos-vm
