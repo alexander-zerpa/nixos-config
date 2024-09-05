@@ -3,15 +3,10 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/vda";
+        device = "/dev/nvme0n1";
         content = {
           type = "gpt";
           partitions = {
-            boot = {
-              label = "boot";
-              size = "1M";
-              type = "EF02";
-            };
             ESP = {
               label = "esp";
               size = "512M";
