@@ -39,7 +39,7 @@
               size = "100%";
               content = {
                 type = "luks";
-                name = "cryptroot"
+                name = "cryptroot";
                 settings.allowDiscards = true;
                 content = {
                   type = "filesystem";

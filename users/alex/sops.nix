@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  import =
-    [
+  imports =
+    [ # Include the results of the hardware scan.
     ];
 
   sops.secrets = {
