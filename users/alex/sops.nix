@@ -5,7 +5,7 @@
     [
     ];
 
-  sops.secrets
+  sops.secrets = {
     alex-password = {
       neededForUsers = true;
       sopsFile = ./secrets.yaml;
