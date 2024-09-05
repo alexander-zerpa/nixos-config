@@ -2,14 +2,21 @@ keys:
   - &admin age1ftswmpx50ze6hhkf9rc2yadmq4ztakkn9xk57tweuvyfvklhyydqluekgw
   - &hosts:
     - &nixos_vm age10vhjst9flezaa68mga2kj7duz67ljyn7dujlddjcdep23h8jrf9qphvnmw
+    - &zaleos age1rlt0wlppr07nek4x0ger34uq9yuz55en4r3yc040cv4qm6zxrsnqmmvvk2
 creation_rules:
   - path_regex: users/alex/secrets\.(yaml|json|env|ini)$
     key_groups:
       - age:
         - *admin
         - *nixos_vm
+        - *zaleos
   - path_regex: hosts/nixos-vm/secrets\.(yaml|json|env|ini)$
     key_groups:
       - age:
         - *admin
         - *nixos_vm
+  - path_regex: hosts/zaleos/secrets\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+        - *admin
+        - *zaleos
