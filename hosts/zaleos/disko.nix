@@ -24,7 +24,7 @@
             };
             swap = {
               label = "swap";
-              size = "34G";
+              size = "4G";
               content = {
                 type = "luks";
                 name = "cryptswap";

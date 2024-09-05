@@ -19,7 +19,7 @@
           ./hosts/nixos-vm/disko.nix
         ];
       };
-      nixos-vm = nixpkgs.lib.nixosSystem {
+      zaleos = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/zaleos
           sops-nix.nixosModules.sops
