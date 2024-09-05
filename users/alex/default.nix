@@ -9,7 +9,7 @@
   users.users.alex = {
     isNormalUser = true;
     description = "Alexander";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" ];
     packages = with pkgs; [];
   };
 }

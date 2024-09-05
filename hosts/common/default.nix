@@ -27,6 +27,22 @@
     };
   };
 
+  # Audio config
+  # alsa
+  sound.enable = true;
+  # pipewire
+  # security.rtkit.enable = true;
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  #   # jack.enable = true;
+  # };
+  # pulseaudio
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
+
   programs = {
     git.enable = true;
 
@@ -34,6 +50,8 @@
 
     starship.enable = true;
   };
+
+  users.defaultUserShell = pkgs.zsh;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
