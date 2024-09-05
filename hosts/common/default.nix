@@ -8,23 +8,59 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  programs.git.enable = true;
+  services = {
+    displayManager = {
+      sddm.enable = true;
+    };
+
+    xserver = {
+      enable = true;
+
+      # resolutions = [ { x = 1920; y = 1080; } ];
+
+      windowManager.awesome = {
+        enable = true;
+      };
+    };
+  };
+
+  programs = {
+    git.enable = true;
+
+    zsh.enable = true;
+
+    starship.enable = true;
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     neovim
     lsd
+    bat
+    stow
+    alacritty
+    librewolf
   ];
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "JetBrainsMono" "DejaVuSansMono" ]; })
+    font-awesome
+  ];
+
+  environment.sessionVariables = {
+    EDITOR = "nvim";
+    TERMINAL = "alacritty";
+  };
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
