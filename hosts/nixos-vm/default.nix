@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./../common
       ./../../users/alex
+      ./../../users/alex/sops.nix
     ];
 
   # Bootloader.
@@ -18,8 +19,6 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   sops = {
-    defaultSopsFile = ./../../secrets.yaml;
-
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
       keyFile = "/var/lib/sops-nix/key.txt";
@@ -29,15 +28,6 @@
     secrets = {
       ssh-host = {
         sopsFile = ./secrets.yaml;
-      };
-
-      alex-password = {
-        neededForUsers = true;
-      };
-      alex-ssh = {
-        path = "/home/alex/.ssh/id_ed25519";
-	mode = "0600";
-	owner = config.users.users.alex.name;
       };
     };
   };
