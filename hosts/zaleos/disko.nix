@@ -7,6 +7,11 @@
         content = {
           type = "gpt";
           partitions = {
+            boot = {
+              label = "vm-boot";
+              size = "1M";
+              type = "EF02";
+            };
             ESP = {
               label = "esp";
               size = "512M";
