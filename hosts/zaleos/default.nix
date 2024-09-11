@@ -72,10 +72,33 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = false;
-    hostKeys = [];
+  services = {
+    openssh = {
+      enable = false;
+      hostKeys = [];
+    };
+
+    syncthing = {
+      enable = true;
+      overrideDevices = true;
+      overrideFolders = true;
+      settings = {
+        devices = {
+          "Pixel 7a Work" = { id = "4DG2LTS-F7RXMI4-ROVSPJX-GXJUJXP-2HD5MHW-U2KYOA7-QNXFL3D-LFVVIQV"; };
+        };
+        folders = {
+          "KeePass" = {
+            id = "mqgyv-htiuw";
+            path = config.services.syncthing.dataDir + "/keepass";
+            devices = [ "Pixel 7a Work" ];
+          };
+        };
+      };
+    };
   };
+
+  networking.firewall.allowedTCPPorts = [ 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

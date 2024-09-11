@@ -12,4 +12,9 @@
     extraGroups = [ "wheel" "networkmanager" "audio" ];
     packages = with pkgs; [];
   };
+
+  services.syncthing = {
+    user = "alex";
+    dataDir = config.users.users.alex.home;
+  };
 }
