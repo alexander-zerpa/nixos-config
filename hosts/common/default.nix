@@ -62,6 +62,9 @@
     stow
     alacritty
     librewolf
+    keepassxc
+    xclip
+    xdg-desktop-portal-gtk
   ];
 
   fonts.packages = with pkgs; [
