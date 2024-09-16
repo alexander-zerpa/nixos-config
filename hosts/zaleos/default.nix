@@ -64,11 +64,14 @@
   environment.systemPackages = with pkgs; [
     arc-icon-theme
     acpi
+    slack
   ];
 
   programs.light.enable = true;
 
   # List services that you want to enable:
+
+  virtualisation.docker.enable = true;
 
   # Enable the OpenSSH daemon.
   services = {
