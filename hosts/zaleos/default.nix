@@ -6,7 +6,6 @@
       ./hardware-configuration.nix
       ./../common
       ./../../users/alex
-      ./../../users/alex/sops.nix
     ];
 
   # Bootloader.
