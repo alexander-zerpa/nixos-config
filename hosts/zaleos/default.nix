@@ -73,6 +73,13 @@
 
   virtualisation.docker.enable = true;
 
+  systemd.user.services.slackAuto = {
+    script = "${pkgs.slack}/bin/slack";
+
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
+
   # Enable the OpenSSH daemon.
   services = {
     openssh = {

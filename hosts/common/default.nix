@@ -71,6 +71,13 @@
     sddm-chili-theme
   ];
 
+  systemd.user.services.keepassAuto = {
+    script = "${pkgs.keepassxc}/bin/keepassxc";
+
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
+
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" "DejaVuSansMono" ]; })
     font-awesome
