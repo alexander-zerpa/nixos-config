@@ -13,7 +13,10 @@
 
   services = {
     displayManager = {
-      sddm.enable = true;
+      sddm = {
+        enable = true;
+        theme = "chili";
+      };
     };
 
     xserver = {
@@ -65,6 +68,7 @@
     keepassxc
     xclip
     xdg-desktop-portal-gtk
+    sddm-chili-theme
   ];
 
   fonts.packages = with pkgs; [
