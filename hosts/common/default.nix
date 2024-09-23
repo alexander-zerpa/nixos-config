@@ -52,6 +52,11 @@
     zsh.enable = true;
 
     starship.enable = true;
+
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
   };
 
   users.defaultUserShell = pkgs.zsh;
@@ -59,7 +64,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim
     lsd
     bat
     stow
