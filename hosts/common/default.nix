@@ -100,6 +100,7 @@
   services.xserver.xkb = {
     layout = "us";
     variant = "";
+    options = "compose:ralt";
   };
 
   hardware.bluetooth.enable = true;
