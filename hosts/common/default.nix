@@ -75,6 +75,8 @@
     xclip
     xdg-desktop-portal-gtk
     sddm-chili-theme
+    ffmpeg
+    pavucontrol
   ];
 
   systemd.user.services.keepassAuto = {
