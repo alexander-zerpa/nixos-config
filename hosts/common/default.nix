@@ -53,6 +53,8 @@
 
     starship.enable = true;
 
+    direnv.enable = true;
+
     neovim = {
       enable = true;
       defaultEditor = true;
