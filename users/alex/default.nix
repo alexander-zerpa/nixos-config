@@ -10,7 +10,7 @@
   users.users.alex = {
     isNormalUser = true;
     description = "Alexander";
-    extraGroups = [ "wheel" "networkmanager" "audio" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "audio" "libvirtd" "docker" ];
     packages = with pkgs; [];
   };
 

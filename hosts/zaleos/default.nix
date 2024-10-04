@@ -65,13 +65,33 @@
     arc-icon-theme
     acpi
     slack
+    polkit_gnome
   ];
+
+  security.polkit.enable = true;
 
   programs.light.enable = true;
 
-  # List services that you want to enable:
+  programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   virtualisation.docker.enable = true;
+
+  # List services that you want to enable:
+
+  systemd.user.services.polkit-gnome-authentication-agent-1 = {
+    description = "polkit-gnome-authentication-agent-1";
+    wantedBy = [ "graphical-session.target" ];
+    wants = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
+  };
 
   systemd.user.services.slackAuto = {
     script = "${pkgs.slack}/bin/slack";
@@ -106,14 +126,14 @@
     };
   };
 
-  networking.firewall.allowedTCPPorts = [ 22000 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+  # networking.firewall.allowedTCPPorts = [ 22000 ];
+  # networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
