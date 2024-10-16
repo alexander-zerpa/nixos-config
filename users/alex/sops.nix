@@ -11,10 +11,13 @@
       sopsFile = ./secrets.yaml;
     };
     alex-ssh = {
-      path = "/home/alex/.ssh/id_ed25519";
+      path = "${config.users.users.alex.home}/.ssh/id_ed25519";
       mode = "0600";
       owner = config.users.users.alex.name;
       sopsFile = ./secrets.yaml;
     };
+  };
+  system.activationScripts = {
+    ssh-pub.text = "${pkgs.openssh}/bin/ssh-keygen -f ${config.sops.secrets.alex-ssh.path} -y > ${config.users.users.alex.home}/.ssh/id_ed25519.pub";
   };
 }
