@@ -64,6 +64,9 @@
 
   users.defaultUserShell = pkgs.zsh;
 
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -79,6 +82,17 @@
     ffmpeg
     pavucontrol
     discord
+    zip
+    unzip
+    pcmanfm
+    lxmenu-data
+    shared-mime-info
+    xarchiver
+    ffmpegthumbnailer
+    imagemagick
+    ghostscript
+    gnome-epub-thumbnailer
+    webp-pixbuf-loader
   ];
 
   systemd.user.services.keepassAuto = {
