@@ -78,6 +78,7 @@
     sddm-chili-theme
     ffmpeg
     pavucontrol
+    discord
   ];
 
   systemd.user.services.keepassAuto = {
