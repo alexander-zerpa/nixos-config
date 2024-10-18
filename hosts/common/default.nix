@@ -17,6 +17,7 @@
         enable = true;
         theme = "chili";
       };
+      autoLogin.enable = true;
     };
 
     xserver = {

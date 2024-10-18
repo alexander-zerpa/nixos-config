@@ -14,6 +14,8 @@
     packages = with pkgs; [];
   };
 
+  services.displayManager.autoLogin.user = config.users.users.alex.name;
+
   services.syncthing = {
     user = "alex";
     dataDir = config.users.users.alex.home;
