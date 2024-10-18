@@ -1,6 +1,7 @@
 keys:
   - &admin age1ftswmpx50ze6hhkf9rc2yadmq4ztakkn9xk57tweuvyfvklhyydqluekgw
   - &hosts:
+    - &hppc age1q3vm2en9qmjl8ww0xxr52nwk2z576hupp6gtmnuwqqrhaxpq59askszavy
     - &nixos_vm age10vhjst9flezaa68mga2kj7duz67ljyn7dujlddjcdep23h8jrf9qphvnmw
     - &zaleos age1rlt0wlppr07nek4x0ger34uq9yuz55en4r3yc040cv4qm6zxrsnqmmvvk2
 creation_rules:
@@ -8,8 +9,14 @@ creation_rules:
     key_groups:
       - age:
         - *admin
+        - *hppc
         - *nixos_vm
         - *zaleos
+  - path_regex: hosts/hppc/secrets\.(yaml|json|env|ini)$
+    key_groups:
+      - age:
+        - *admin
+        - *hppc
   - path_regex: hosts/nixos-vm/secrets\.(yaml|json|env|ini)$
     key_groups:
       - age:

@@ -11,6 +11,14 @@
 
   outputs = { self, nixpkgs, sops-nix, disko }: {
     nixosConfigurations = {
+      hppc = nixpkgs.lib.nixosSystem {
+        modules = [
+          ./hosts/hppc
+          sops-nix.nixosModules.sops
+          disko.nixosModules.disko
+          ./hosts/hppc/disko.nix
+        ];
+      };
       nixos-vm = nixpkgs.lib.nixosSystem {
         modules = [
           ./hosts/nixos-vm
