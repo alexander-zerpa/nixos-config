@@ -93,6 +93,7 @@
     ghostscript
     gnome-epub-thumbnailer
     webp-pixbuf-loader
+    zathura
   ];
 
   systemd.user.services.keepassAuto = {
