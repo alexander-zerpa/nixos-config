@@ -29,6 +29,11 @@
         enable = true;
       };
     };
+
+    picom = {
+      enable = true;
+      vSync = true;
+    };
   };
 
   # Audio config
