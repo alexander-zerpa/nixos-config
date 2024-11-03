@@ -102,6 +102,7 @@
     # end file-manager
     zathura
     thunderbird
+    mpv
   ];
 
   systemd.user.services.keepassAuto = {
