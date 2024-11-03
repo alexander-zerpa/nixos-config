@@ -89,6 +89,7 @@
     discord
     zip
     unzip
+    # file-manager
     pcmanfm
     lxmenu-data
     shared-mime-info
@@ -98,6 +99,7 @@
     ghostscript
     gnome-epub-thumbnailer
     webp-pixbuf-loader
+    # end file-manager
     zathura
   ];
 
