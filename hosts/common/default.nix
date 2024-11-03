@@ -101,6 +101,7 @@
     webp-pixbuf-loader
     # end file-manager
     zathura
+    thunderbird
   ];
 
   systemd.user.services.keepassAuto = {
