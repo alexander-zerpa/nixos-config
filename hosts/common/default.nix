@@ -102,6 +102,7 @@
     # end file-manager
     zathura
     thunderbird
+    qbittorrent
     mpv
   ];
 
