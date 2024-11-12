@@ -74,6 +74,7 @@
 
   programs.virt-manager.enable = true;
   virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd.qemu.vhostUserPackages = [ pkgs.virtiofsd ];
 
   virtualisation.docker.enable = true;
 
