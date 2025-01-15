@@ -16,6 +16,7 @@
 
   networking.hostName = "hppc"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.interfaces."enp2s0".wakeOnLan.enable = true;
 
   sops = {
     age = {
