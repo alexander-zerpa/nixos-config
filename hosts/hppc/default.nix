@@ -75,6 +75,8 @@
     ];
   };
 
+  hardware.keyboard.qmk.enable = true;
+
   hardware.opengl = {
     enable = true;
     driSupport = true;
