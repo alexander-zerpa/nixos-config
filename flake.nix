@@ -7,9 +7,12 @@
 
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
+
+    autofirma-nix.url = "github:nix-community/autofirma-nix/release-24.05";
+    autofirma-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, sops-nix, disko }: {
+  outputs = { self, nixpkgs, sops-nix, disko, autofirma-nix }: {
     nixosConfigurations = {
       hppc = nixpkgs.lib.nixosSystem {
         modules = [
@@ -17,6 +20,14 @@
           sops-nix.nixosModules.sops
           disko.nixosModules.disko
           ./hosts/hppc/disko.nix
+          autofirma-nix.nixosModules.default
+          ({pkgs, config, ... }: {
+            programs.autofirma.enable = true;
+            programs.autofirma.firefoxIntegration.enable = true;
+
+            programs.configuradorfnmt.enable = true;
+            programs.configuradorfnmt.firefoxIntegration.enable = true;
+          })
         ];
       };
       nixos-vm = nixpkgs.lib.nixosSystem {
