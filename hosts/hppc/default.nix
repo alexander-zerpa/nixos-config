@@ -116,6 +116,13 @@
       TimeoutStopSec = 10;
     };
   };
+
+  systemd.user.services.qbittorrentAuto = {
+    script = "${pkgs.qbittorrent}/bin/qbittorrent";
+
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
   
   # Enable the OpenSSH daemon.
   services = {
