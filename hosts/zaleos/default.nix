@@ -114,13 +114,13 @@
       overrideFolders = true;
       settings = {
         devices = {
-          "Pixel 7a Work" = { id = "4DG2LTS-F7RXMI4-ROVSPJX-GXJUJXP-2HD5MHW-U2KYOA7-QNXFL3D-LFVVIQV"; };
+          "Pixel 7a" = { id = "ALYRLWH-67OM7IF-NKW3C6R-MSS6M2D-IVFN76A-74HIENM-PD5QWZP-CUQJGQX"; };
         };
         folders = {
           "KeePass" = {
             id = "mqgyv-htiuw";
             path = config.services.syncthing.dataDir + "/keepass";
-            devices = [ "Pixel 7a Work" ];
+            devices = [ "Pixel 7a" ];
           };
         };
       };
