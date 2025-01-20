@@ -37,8 +37,6 @@
   };
 
   # Audio config
-  # alsa
-  sound.enable = true;
   # pipewire
   # security.rtkit.enable = true;
   # services.pipewire = {
@@ -49,6 +47,7 @@
   #   # jack.enable = true;
   # };
   # pulseaudio
+  services.pipewire.enable = false;
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.support32Bit = true;
 

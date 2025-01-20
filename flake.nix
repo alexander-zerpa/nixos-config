@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
 
     sops-nix.url = "github:Mic92/sops-nix";
     sops-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -8,7 +8,7 @@
     disko.url = "github:nix-community/disko";
     disko.inputs.nixpkgs.follows = "nixpkgs";
 
-    autofirma-nix.url = "github:nix-community/autofirma-nix/release-24.05";
+    autofirma-nix.url = "github:nix-community/autofirma-nix/release-24.11";
     autofirma-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
