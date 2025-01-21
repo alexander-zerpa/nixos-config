@@ -77,10 +77,7 @@
 
   hardware.keyboard.qmk.enable = true;
 
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-  };
+  hardware.opengl.enable = true;
 
   services.xserver.displayManager.setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-0 --primary --auto --output DVI-D-0 --auto --below HDMI-0 --output DP-0 --auto --right-of DVI-D-0";
 
