@@ -142,24 +142,40 @@
             path = config.services.syncthing.dataDir + "/keepass";
             devices = [ "Pixel 7a" ];
             ignorePerms = true;
+            versioning = {
+              type = "simple";
+              params.keep = "5";
+            };
           };
           "PhoneBackup" = {
             id = "vxfq2-5ni1c";
             path = "/mnt/External/Documents/Backups/Phone";
             devices = [ "Pixel 7a" ];
             ignorePerms = true;
+            versioning = {
+              type = "simple";
+              params.keep = "5";
+            };
           };
           "Camera" = {
             id = "uhicb-k46un";
             path = "/mnt/External/Documents/phone/Camera";
             devices = [ "Pixel 7a" ];
             ignorePerms = true;
+            versioning = {
+              type = "simple";
+              params.keep = "5";
+            };
           };
           "WhatsApp" = {
             id = "9x00m-w24p7";
             path = "/mnt/External/Documents/phone/WhatsApp";
             devices = [ "Pixel 7a" ];
             ignorePerms = true;
+            versioning = {
+              type = "simple";
+              params.keep = "5";
+            };
           };
         };
       };
