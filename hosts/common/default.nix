@@ -88,6 +88,7 @@
     discord
     zip
     unzip
+    btop
     # file-manager
     pcmanfm
     lxmenu-data
