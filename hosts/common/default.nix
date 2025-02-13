@@ -34,6 +34,9 @@
       windowManager.awesome = {
         enable = true;
       };
+
+      desktopManager.xterm.enable = false;
+      excludePackages = with pkgs; [ xterm ];
     };
 
     picom = {
