@@ -11,6 +11,12 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+    ];
+  };
+
   services = {
     displayManager = {
       sddm = {
