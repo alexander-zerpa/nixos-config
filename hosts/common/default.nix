@@ -79,6 +79,7 @@
     bat
     stow
     alacritty
+    ueberzugpp
     librewolf
     keepassxc
     xclip
