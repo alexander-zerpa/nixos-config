@@ -63,6 +63,7 @@
     neovim = {
       enable = true;
       defaultEditor = true;
+      withNodeJs = true;
     };
   };
 
