@@ -69,6 +69,11 @@
 
     direnv.enable = true;
 
+    xss-lock = {
+      enable = true;
+      lockerCommand = "${pkgs.xsecurelock}/bin/xsecurelock";
+    };
+
     neovim = {
       enable = true;
       defaultEditor = true;
