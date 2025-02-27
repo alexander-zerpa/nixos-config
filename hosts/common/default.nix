@@ -45,6 +45,12 @@
     };
   };
 
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+    config.common.default = "gtk";
+  };
+
   # Audio config
   # pipewire
   # security.rtkit.enable = true;
@@ -79,6 +85,8 @@
       defaultEditor = true;
       withNodeJs = true;
     };
+
+    thunderbird.enable = true;
 
     firefox = {
       enable = true;
@@ -127,7 +135,6 @@
     ueberzugpp
     keepassxc
     xclip
-    xdg-desktop-portal-gtk
     sddm-chili-theme
     ffmpeg
     pavucontrol
@@ -147,7 +154,6 @@
     webp-pixbuf-loader
     # end file-manager
     zathura
-    thunderbird
     qbittorrent
     mpv
   ];
