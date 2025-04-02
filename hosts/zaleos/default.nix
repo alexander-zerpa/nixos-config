@@ -78,6 +78,8 @@
 
   virtualisation.docker.enable = true;
 
+  services.xserver.displayManager.setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --primary --auto --output eDP-1 --auto --right-of HDMI-1";
+
   # List services that you want to enable:
 
   systemd.user.services.polkit-gnome-authentication-agent-1 = {
