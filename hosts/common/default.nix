@@ -156,10 +156,18 @@
     zathura
     qbittorrent
     mpv
+    birdtray
   ];
 
   systemd.user.services.keepassAuto = {
     script = "${pkgs.keepassxc}/bin/keepassxc";
+
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+  };
+
+  systemd.user.services.birdtray = {
+    script = "${pkgs.birdtray}/bin/birdtray";
 
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
