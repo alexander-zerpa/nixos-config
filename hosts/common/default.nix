@@ -130,6 +130,7 @@
   environment.systemPackages = with pkgs; [
     lsd
     bat
+    fzf
     stow
     alacritty
     ueberzugpp
