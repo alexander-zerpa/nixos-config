@@ -59,6 +59,38 @@
     LC_TIME = "es_ES.UTF-8";
   };
 
+  services.kmonad = {
+    enable = true;
+    keyboards = {
+      "home-rows" = {
+        device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
+        defcfg = {
+          enable = true;
+          fallthrough = true;
+        };
+        config = ''
+          (defsrc
+              caps    a    s    d    f    g    h    j    k    l    ;
+          )
+          (defalias
+              alt_a (tap-hold-next-release 200 a lalt)
+              ctl_s (tap-hold-next-release 200 s lctl)
+              met_d (tap-hold-next-release 200 d lmet)
+              sft_f (tap-hold-next-release 125 f lsft)
+
+              sft_j (tap-hold-next-release 125 j rsft)
+              met_k (tap-hold-next-release 200 k rmet)
+              ctl_l (tap-hold-next-release 200 l rctl)
+              alt_; (tap-hold-next-release 200 ; lalt)
+          )
+          (deflayer homerowmods
+              esc     @alt_a   @ctl_s   @met_d   @sft_f   g   h   @sft_j   @met_k   @ctl_l   @alt_;
+          )
+          '';
+      };
+    };
+  };
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
