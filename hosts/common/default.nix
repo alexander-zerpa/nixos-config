@@ -175,10 +175,20 @@
     partOf = [ "graphical-session.target" ];
   };
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "JetBrainsMono" "DejaVuSansMono" ]; })
-    font-awesome
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      (nerdfonts.override { fonts = [ "JetBrainsMono" "DejaVuSansMono" ]; })
+    ];
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "DejaVu Serif" ];
+        sansSerif = [ "DejaVu Sans" ];
+        monospace = [ "JetBrainsMono Nerd Font" "DejaVuSansM Nerd Font" "DejaVu Sans Mono" "Noto Color Emoji" ];
+        emoji = [ "Noto Color Emoji" ] ;
+      };
+    };
+  };
 
   environment.sessionVariables = {
     EDITOR = "nvim";
