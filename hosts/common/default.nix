@@ -143,6 +143,7 @@
     zip
     unzip
     btop
+    ripgrep
     # file-manager
     pcmanfm
     lxmenu-data
