@@ -178,7 +178,8 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "JetBrainsMono" "DejaVuSansMono" ]; })
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.dejavu-sans-mono
     ];
     fontconfig = {
       defaultFonts = {
