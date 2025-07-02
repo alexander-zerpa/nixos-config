@@ -14,6 +14,8 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.efiSupport = true;
 
+  boot.extraModprobeConfig = "options kvm_amd nested=1";
+
   networking.hostName = "zaleos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
