@@ -51,6 +51,11 @@
     config.common.default = "gtk";
   };
 
+  qt = {
+    enable = true;
+    style = "adwaita-dark";
+  };
+
   # Audio config
   # pipewire
   # security.rtkit.enable = true;
