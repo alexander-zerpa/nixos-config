@@ -96,6 +96,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    displaylink
     arc-icon-theme
     acpi
     slack
@@ -112,7 +113,14 @@
 
   virtualisation.docker.enable = true;
 
-  services.xserver.displayManager.setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --primary --auto --output eDP-1 --auto --right-of HDMI-1";
+  services.xserver = {
+    enable = true;
+    displayManager.setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output HDMI-1 --primary --auto --output eDP-1 --auto --right-of HDMI-1";
+    videoDrivers = [ "displaylink" "modesetting" ];
+    displayManager.sessionCommands = ''
+      ${pkgs.xorg.xrandr}/bin/xrandr --setprovideroutputsource 2 0
+    '';
+  };
 
   # List services that you want to enable:
 
