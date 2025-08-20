@@ -181,10 +181,13 @@
   };
 
   fonts = {
-    enableDefaultPackages = true;
+    enableDefaultPackages = false;
     packages = with pkgs; [
       nerd-fonts.jetbrains-mono
       nerd-fonts.dejavu-sans-mono
+      dejavu_fonts
+      unifont
+      noto-fonts-color-emoji
     ];
     fontconfig = {
       defaultFonts = {
