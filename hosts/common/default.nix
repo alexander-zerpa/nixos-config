@@ -78,7 +78,13 @@
 
     starship.enable = true;
 
-    direnv.enable = true;
+    direnv =  {
+      enable = true;
+      settings = {
+        log_format = "[2mdirenv: %s[0m";
+        hide_env_diff = true;
+      };
+    };
 
     xss-lock = {
       enable = true;
