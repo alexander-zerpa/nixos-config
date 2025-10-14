@@ -171,6 +171,13 @@
     };
   };
 
+  services.tailscale = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  networking.extraHosts = "100.65.227.25 sabiduriav3.zaleos.indigitaldev.net";
+
   # networking.firewall.allowedTCPPorts = [ 22000 ];
   # networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
