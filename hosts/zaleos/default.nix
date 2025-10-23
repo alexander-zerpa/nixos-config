@@ -72,21 +72,46 @@
         };
         config = ''
           (defsrc
-              caps    a    s    d    f    g    h    j    k    l    ;
+              grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+              tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+              caps a    s    d    f    g    h    j    k    l    ;    '    ret
+              lsft z    x    c    v    b    n    m    ,    .    /    rsft up
+              lctl lmet lalt           spc            ralt lsgt rctl left down right
           )
           (defalias
-              alt_a (tap-hold-next-release 200 a lalt)
-              ctl_s (tap-hold-next-release 200 s lctl)
-              met_d (tap-hold-next-release 200 d lmet)
-              sft_f (tap-hold-next-release 125 f lsft)
+              hla (tap-hold-next-press 200 a lalt)
+              hlc (tap-hold-next-press 200 s lctl)
+              hlm (tap-hold-next-press 200 d lmet)
+              hls (tap-hold-next-press 125 f lsft)
 
-              sft_j (tap-hold-next-release 125 j rsft)
-              met_k (tap-hold-next-release 200 k rmet)
-              ctl_l (tap-hold-next-release 200 l rctl)
-              alt_; (tap-hold-next-release 200 ; lalt)
+              hrs (tap-hold-next-press 125 j rsft)
+              hrm (tap-hold-next-press 200 k rmet)
+              hrc (tap-hold-next-press 200 l rctl)
+              hra (tap-hold-next-press 200 ; lalt)
+
+              sym (tap-hold-next-release 200 spc (layer-toggle symbollayer))
+              nav (tap-hold-next-release 200 ret (layer-toggle navigationlayer))
           )
           (deflayer homerowmods
-              esc     @alt_a   @ctl_s   @met_d   @sft_f   g   h   @sft_j   @met_k   @ctl_l   @alt_;
+              _    _    _    _    _    _    _    _    _    _    _    _    _    _
+              _    _    _    _    _    _    _    _    _    _    _    bspc _    _
+              esc  @hla @hlc @hlm @hls _    _    @hrs @hrm @hrc @hra _    _
+              _    _    _    _    _    _    _    _    _    _    _    _    _
+              _    _    @nav           @sym           _    _    _    _    _    _
+          )
+          (deflayer symbollayer
+              _    _    _    _    _    _    _    _    _    _    _    _    _    _
+              ~    !    @   #    $    %    ^    &    *    \(   \)    del  _    _
+              caps 1    2    3    4    5    \\   -    =    {    }    `    _
+              _    6    7    8    9    0    |    \_   +    [    ]    _    _
+              _    _    _              _              _    _    _    _    _    _
+          )
+          (deflayer navigationlayer
+              _    _    _    _    _    _    _    _    _    _    _    _    _    _
+              _    _    _    _    _    _    home pgdn pgup end  _    _    _    _
+              _    _    _    _    _    _    left down up   right _   _    _
+              _    _    _    _    _    _    _    _    _    _    _    _    _
+              _    _    _              _              _    _    _    _    _    _
           )
           '';
       };
