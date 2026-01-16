@@ -158,7 +158,7 @@
     bat
     fzf
     stow
-    alacritty
+    alacritty-graphics
     ueberzugpp
     keepassxc
     xclip
