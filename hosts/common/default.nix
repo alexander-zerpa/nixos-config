@@ -106,11 +106,6 @@
       };
     };
 
-    xss-lock = {
-      enable = true;
-      lockerCommand = "${pkgs.i3lock-fancy-rapid}/bin/i3lock-fancy-rapid 5 5";
-    };
-
     neovim = {
       enable = true;
       defaultEditor = true;
