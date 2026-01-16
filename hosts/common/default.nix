@@ -51,6 +51,20 @@
     };
   };
 
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true;
+    xwayland.enable = true;
+    extraPackages = with pkgs; [
+      brightnessctl
+      swayidle
+      swaylock
+      wofi
+      i3status-rust
+      imv
+    ];
+  };
+
   xdg.portal = {
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
