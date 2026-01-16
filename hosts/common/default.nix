@@ -19,11 +19,17 @@
 
   services = {
     displayManager = {
-      sddm = {
+      ly = {
         enable = true;
-        theme = "chili";
+        settings = {
+          battery_id = "BAT1";
+          clear_password = true;
+          text_in_center = true;
+          vi_mode = true;
+          vi_default_mode = "insert";
+        };
       };
-      autoLogin.enable = true;
+      autoLogin.enable = false;
     };
 
     xserver = {
