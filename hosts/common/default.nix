@@ -53,6 +53,18 @@
         enable = true;
       };
 
+      windowManager.i3 = {
+        enable = true;
+        extraPackages = with pkgs; [
+          brightnessctl
+          i3lock-fancy-rapid
+          dmenu
+          rofi
+          i3status-rust
+          sxiv
+        ];
+      };
+
       desktopManager.xterm.enable = false;
       excludePackages = with pkgs; [ xterm ];
     };
@@ -81,6 +93,7 @@
     enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
     config.common.default = "gtk";
+    wlr.enable = true;
   };
 
   qt = {
