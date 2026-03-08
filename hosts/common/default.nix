@@ -70,8 +70,8 @@
     extraPackages = with pkgs; [
       brightnessctl
       swayidle
-      swaylock
-      wofi
+      swaylock-effects
+      rofi
       i3status-rust
       imv
     ];
