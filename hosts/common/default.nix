@@ -103,18 +103,18 @@
 
   # Audio config
   # pipewire
-  # security.rtkit.enable = true;
-  # services.pipewire = {
-  #   enable = true;
-  #   alsa.enable = true;
-  #   alsa.support32Bit = true;
-  #   pulse.enable = true;
-  #   # jack.enable = true;
-  # };
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    # jack.enable = true;
+  };
   # pulseaudio
-  services.pipewire.enable = false;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.support32Bit = true;
+  # services.pipewire.enable = false;
+  # hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.support32Bit = true;
 
   programs = {
     git.enable = true;
