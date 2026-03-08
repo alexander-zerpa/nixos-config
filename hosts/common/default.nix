@@ -210,6 +210,16 @@
     qbittorrent
     mpv
     birdtray
+
+    # launcher based menus
+    # iwmenu
+    # pwmenu
+    # bzmenu
+    rofi-network-manager
+    rofi-bluetooth
+    rofi-pulse-select
+
+    dunst
   ];
 
   systemd.user.services.keepassAuto = {
