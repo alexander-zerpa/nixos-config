@@ -79,15 +79,15 @@
               lctl lmet lalt           spc            ralt lsgt rctl left down right
           )
           (defalias
-              hla (tap-hold-next-press 200 a lalt)
-              hlc (tap-hold-next-press 200 s lctl)
-              hlm (tap-hold-next-press 200 d lmet)
-              hls (tap-hold-next-press 125 f lsft)
+              hla (tap-hold-next-release 200 a lalt)
+              hlc (tap-hold-next-release 200 s lctl)
+              hlm (tap-hold-next-release 200 d lmet)
+              hls (tap-hold-next-release 125 f lsft)
 
-              hrs (tap-hold-next-press 125 j rsft)
-              hrm (tap-hold-next-press 200 k rmet)
-              hrc (tap-hold-next-press 200 l rctl)
-              hra (tap-hold-next-press 200 ; lalt)
+              hrs (tap-hold-next-release 125 j rsft)
+              hrm (tap-hold-next-release 200 k rmet)
+              hrc (tap-hold-next-release 200 l rctl)
+              hra (tap-hold-next-release 200 ; lalt)
 
               sym (tap-hold-next-release 200 spc (layer-toggle symbollayer))
               nav (tap-hold-next-release 200 ret (layer-toggle navigationlayer))
