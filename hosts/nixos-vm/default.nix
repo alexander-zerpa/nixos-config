@@ -4,7 +4,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./../common
       ./../../users/alex
       ./../../users/alex/sops.nix
     ];

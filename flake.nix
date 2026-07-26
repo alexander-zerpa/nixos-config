@@ -20,6 +20,7 @@
           sops-nix.nixosModules.sops
           disko.nixosModules.disko
           ./hosts/hppc/disko.nix
+          ./nixosModules
           autofirma-nix.nixosModules.default
           ({pkgs, config, ... }: {
             programs.autofirma.enable = true;
@@ -36,6 +37,7 @@
           sops-nix.nixosModules.sops
           disko.nixosModules.disko
           ./hosts/nixos-vm/disko.nix
+          ./nixosModules
         ];
       };
       zaleos = nixpkgs.lib.nixosSystem {
@@ -44,6 +46,7 @@
           sops-nix.nixosModules.sops
           disko.nixosModules.disko
           ./hosts/zaleos/disko.nix
+          ./nixosModules
         ];
       };
     };
