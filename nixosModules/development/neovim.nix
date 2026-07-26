@@ -6,14 +6,20 @@
   };
 
   config = lib.mkIf config.development.neovim.enable {
-    programs = {
-      neovim = {
-        enable = true;
-        defaultEditor = true;
-        withNodeJs = true;
-      };
-    };
-
+    environment.systemPackages = with pkgs; [
+      (neovim.override {
+        extraMakeWrapperArgs = ''
+          --prefix PATH : ${
+            lib.makeBinPath [
+              gcc
+              tree-sitter
+              fd
+              ripgrep
+            ]
+          }
+        '';
+      })
+    ];
     environment.sessionVariables.EDITOR = "nvim";
   };
 }
