@@ -14,6 +14,7 @@
         brightnessctl
         swayidle
         swaylock-effects
+        swayosd
         rofi
         i3status-rust
         imv
