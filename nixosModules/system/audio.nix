@@ -19,5 +19,6 @@
     # services.pipewire.enable = false;
     # hardware.pulseaudio.enable = true;
     # hardware.pulseaudio.support32Bit = true;
+    services.playerctld.enable = true;
   };
 }
